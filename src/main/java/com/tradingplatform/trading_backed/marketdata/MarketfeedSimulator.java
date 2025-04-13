@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tradingplatform.trading_backed.feed.MyWebSocketHandler;
+import com.tradingplatform.trading_backed.orders.OrderService;
 
 
 @Component
@@ -15,6 +16,9 @@ public class MarketfeedSimulator {
 
     @Autowired
     private MyWebSocketHandler myWebSocketHandler;
+
+    @Autowired
+    private OrderService orderService;
 
     private final Random random = new Random();
     private BigDecimal lastPrice = BigDecimal.valueOf(100.0); // Initial price
@@ -27,8 +31,10 @@ public class MarketfeedSimulator {
             public void run() {
                 try {
                     while (true) {
-                        Thread.sleep(1000);
+                        Thread.sleep(10000);
                         MarketFeed marketFeed = getMarketFeed("AAPL");
+                        orderService.updateMTM(marketFeed.symbol, marketFeed.getPrice());
+
                         ObjectMapper objectMapper = new ObjectMapper();
                         String marketFeedJson = objectMapper.writeValueAsString(marketFeed);
                         //add type

@@ -84,4 +84,29 @@ public class OrderService {
         orderRepository.deleteAll();
     }
 
+    public void updateMTM(String stockSymbol, BigDecimal currentMarketPrice) {
+        List<Order> orders = orderRepository.findOrderByStockSymbol(stockSymbol);
+        
+        for (Order order : orders) {
+            BigDecimal mtm;
+            if (order.getOrderType() == OrderType.BUY) {
+                // For buy orders: MTM = (Current Market Price - Purchase Price) * Quantity
+                mtm = currentMarketPrice.subtract(order.getPrice()).multiply(BigDecimal.valueOf(order.getFilledQty()));
+            } else {
+                // For sell orders: MTM = (Sell Price - Current Market Price) * Quantity
+                mtm = order.getPrice().subtract(currentMarketPrice).multiply(BigDecimal.valueOf(order.getFilledQty()));
+            }
+            
+            order.setMtm(mtm);
+            order.setLastMarketPrice(currentMarketPrice);
+            orderRepository.save(order);
+            
+            try {
+                sendOrderToUser(order);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 }

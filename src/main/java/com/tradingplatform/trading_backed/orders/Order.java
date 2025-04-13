@@ -53,4 +53,26 @@ public class Order {
     private OrderStatus orderStatus; // PENDING, FILLED, CANCELLED
 
     private LocalDateTime timestamp = LocalDateTime.now(); // Auto timestamp
+
+    @Column
+    private BigDecimal mtm;
+
+    @Column
+    private BigDecimal lastMarketPrice;
+
+    public BigDecimal getMtm() {
+        return mtm;
+    }
+
+    public void setMtm(BigDecimal mtm) {
+        this.mtm = mtm;
+    }
+
+    public BigDecimal getLastMarketPrice() {
+        return lastMarketPrice;
+    }
+
+    public void setLastMarketPrice(BigDecimal lastMarketPrice) {
+        this.lastMarketPrice = lastMarketPrice;
+    }
 }

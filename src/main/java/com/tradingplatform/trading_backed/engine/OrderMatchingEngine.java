@@ -7,6 +7,7 @@ import com.tradingplatform.trading_backed.orders.*;
 import com.tradingplatform.trading_backed.trades.Trade;
 import com.tradingplatform.trading_backed.trades.TradeRepository;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 
 import java.util.PriorityQueue;
@@ -25,6 +26,7 @@ public class OrderMatchingEngine {
     private final TradeRepository tradeRepository;  
     private final MyWebSocketHandler myWebSocketHandler;
     private final OrderService orderService;
+    private final OrderRepository orderRepository;
 
     @Autowired
     private UserSessions userSessions;
@@ -44,6 +46,7 @@ public class OrderMatchingEngine {
         matchOrders(); // Check for possible matches
     }
 
+    @Transactional
     private synchronized void matchOrders() {
         while (!buyOrders.isEmpty() && !sellOrders.isEmpty()) {
             Order bestBid = buyOrders.peek(); // Highest Buy Order
@@ -80,9 +83,13 @@ public class OrderMatchingEngine {
 
                     System.out.println("Trade Executed: " + tradeQuantity + " shares at $" + bestAsk.getPrice());
 
+
                     // Update filled quantities
                     bestBid.setFilledQty(bestBid.getFilledQty() + tradeQuantity);
                     bestAsk.setFilledQty(bestAsk.getFilledQty() + tradeQuantity);
+
+                    orderRepository.save(bestBid);
+                    orderRepository.save(bestAsk);
 
                     // Remove fully filled orders from queues
                     if (bestBid.getFilledQty() >= bestBid.getQuantity()) {
