@@ -1,0 +1,46 @@
+{
+  "name": "paper-trading-simulator",
+  "version": "1.0.0",
+  "description": "A paper trading simulator for practicing stock trading without real money.",
+  "main": "src/index.tsx",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.2.0",
+    "axios": "^1.4.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.30.0",
+    "react-scripts": "^5.0.1",
+    "typescript": "^4.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^16.0.0",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.2",
+    "@types/react-router-dom": "^5.1.8"
+  },
+  "keywords": [
+    "paper trading",
+    "stock market",
+    "simulator"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

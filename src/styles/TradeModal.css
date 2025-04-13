@@ -1,0 +1,100 @@
+.trade-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.trade-modal {
+    background: #2d2d2d;
+    border-radius: 12px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.trade-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.trade-modal-header h2 {
+    color: #ffffff;
+    margin: 0;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    color: #b0b0b0;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    color: #b0b0b0;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #404040;
+    border-radius: 6px;
+    background: #363636;
+    color: #ffffff;
+}
+
+.order-summary {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: #363636;
+    border-radius: 6px;
+    color: #ffffff;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.modal-actions button {
+    flex: 1;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.cancel-button {
+    background: #404040;
+    color: #ffffff;
+}
+
+.confirm-button {
+    color: #ffffff;
+}
+
+.confirm-button.buy {
+    background: #28a745;
+}
+
+.confirm-button.sell {
+    background: #dc3545;
+}

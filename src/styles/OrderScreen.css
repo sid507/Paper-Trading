@@ -1,0 +1,135 @@
+.order-screen {
+    background: #1a1a1a;
+    color: #ffffff;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.delete-all-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.delete-all-button:hover:not(:disabled) {
+    background-color: #c82333;
+}
+
+.delete-all-button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+.order-header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.order-summary {
+    background: #2d2d2d;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #b0b0b0;
+}
+
+.order-table-container {
+    background: #2d2d2d;
+    border-radius: 12px;
+    padding: 1.5rem;
+    overflow-x: auto;
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 0.5rem;
+}
+
+.order-table th {
+    color: #b0b0b0;
+    font-weight: 500;
+    text-align: left;
+    padding: 1rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.order-row {
+    background: #363636;
+    transition: all 0.2s ease;
+}
+
+.order-row:hover {
+    background: #404040;
+    transform: translateY(-2px);
+}
+
+.order-row td {
+    padding: 1rem;
+    border: none;
+}
+
+.order-type {
+    font-weight: 600;
+}
+
+.order-type.buy {
+    color: #00c853;
+}
+
+.order-type.sell {
+    color: #ff3d00;
+}
+
+.order-status {
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+.order-status.pending {
+    color: #ffc107;
+}
+
+.order-status.filled {
+    color: #00c853;
+}
+
+.order-status.cancelled {
+    color: #ff3d00;
+}
+
+.order-screen-loading,
+.order-screen-error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 1.2rem;
+    color: #b0b0b0;
+}
+
+.order-screen-error {
+    color: #ff3d00;
+}

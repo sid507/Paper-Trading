@@ -1,0 +1,321 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+.market-feed-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.market-feed-screen {
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.market-feed-screen h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.market-feed-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.market-feed-table th,
+.market-feed-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.market-feed-table th {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.market-feed-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.market-feed-table tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.market-feed-table td {
+    vertical-align: middle;
+}
+
+.market-feed-table .positive {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.market-feed-table .negative {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.trade-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.trade-actions .button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.trade-actions .button.buy {
+    background-color: #28a745;
+    color: white;
+}
+
+.trade-actions .button.sell {
+    background-color: #dc3545;
+    color: white;
+}
+
+.trade-actions .button.buy:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+.trade-actions .button.sell:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+
+.trade-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.buy-button {
+    background-color: #28a745;
+    color: white;
+}
+
+.sell-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+.buy-button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+.sell-button:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+
+.market-data-container {
+    background: #1a1a1a;
+    color: #ffffff;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+.market-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.market-header h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.market-stats {
+    background: #2d2d2d;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
+
+.stat {
+    font-size: 0.9rem;
+    color: #b0b0b0;
+}
+
+.market-table-container {
+    background: #2d2d2d;
+    border-radius: 12px;
+    padding: 1rem;
+    overflow-x: auto;
+}
+
+.market-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 0.5rem;
+}
+
+.market-table th {
+    color: #b0b0b0;
+    font-weight: 500;
+    text-align: left;
+    padding: 1rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.market-row {
+    background: #363636;
+    transition: all 0.2s ease;
+}
+
+.market-row:hover {
+    background: #404040;
+    transform: translateY(-2px);
+}
+
+.market-row td {
+    padding: 1rem;
+    border: none;
+}
+
+.symbol-cell {
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.price-cell {
+    color: #ffffff;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.change-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.change-cell.positive {
+    color: #00c853;
+}
+
+.change-cell.negative {
+    color: #ff3d00;
+}
+
+.change-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.volume-cell {
+    color: #b0b0b0;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.trade-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.trade-btn.buy {
+    background: #00c853;
+    color: #ffffff;
+}
+
+.trade-btn.buy:hover {
+    background: #00b34a;
+}
+
+.trade-btn.sell {
+    background: #ff3d00;
+    color: #ffffff;
+}
+
+.trade-btn.sell:hover {
+    background: #e63600;
+}
+
+.market-screen {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    min-height: 100vh;
+    background: #1a1a1a;
+}
+
+.market-section {
+    padding: 2rem 2rem 0 2rem;
+}
+
+.orders-wrapper {
+    padding: 0 2rem 2rem 2rem;
+}
