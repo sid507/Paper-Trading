@@ -48,5 +48,9 @@ public class Order {
 
     private int filledQty; // Number of stocks filled
 
+    // order status
+    @Enumerated(EnumType.STRING)
+    private OrderStatus orderStatus; // PENDING, FILLED, CANCELLED
+
     private LocalDateTime timestamp = LocalDateTime.now(); // Auto timestamp
 }

@@ -1,5 +1,6 @@
 package com.tradingplatform.trading_backed.feed;
 
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -31,4 +32,9 @@ public class UserSessions {
     public WebSocketSession getSession(String userId) {
         return users.get(userId);
     }    
+
+    //get the list of all sessions
+    public List<WebSocketSession> getAllSessions() {
+        return List.copyOf(users.values());
+    }
 }

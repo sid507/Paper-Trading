@@ -38,7 +38,7 @@ public class MyWebSocketHandler extends TextWebSocketHandler {
     }
 
     private void joinRoom(String username, WebSocketSession session) throws Exception {
-        userSessions.addSession(username, session);        
+        userSessions.addSession(username, session);   
         session.sendMessage(new TextMessage("User: " + username+" joined the room"));
     }
 
@@ -53,7 +53,14 @@ public class MyWebSocketHandler extends TextWebSocketHandler {
         session.sendMessage(new TextMessage(message));
                 
         }
-    
+    //broadcast to all users in the room
+    public void broadcastToRoom(String message) throws Exception {
+        for (WebSocketSession session : userSessions.getAllSessions()) {
+            if (session.isOpen()) {
+                session.sendMessage(new TextMessage(message));
+            }
+        }
+    }
 
     //
 }
